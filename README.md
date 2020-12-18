@@ -12,7 +12,7 @@ The app demonstrates how decoupling content from its presentation enables greate
 
 <a href="https://the-example-app-nodejs.herokuapp.com/" target="_blank"><img src="https://images.contentful.com/qz0n5cdakyl9/4GZmvrdodGM6CksMCkkAEq/700a527b8203d4d3ccd3c303c5b3e2aa/the-example-app.png" alt="Screenshot of the example app"/></a>
 
-You can see a hosted version of `The node.js example app` on <a href="https://the-example-app-nodejs.herokuapp.com/" target="_blank">Heroku</a>.
+You can see a hosted version of `The node.js example app` on <a href="https://the-example-app-nodejs.contentful.com/" target="_blank">Heroku</a>.
 
 ## What is Contentful?
 
@@ -62,7 +62,7 @@ Step 3: Create a new space
 ```
 contentful space create --name 'My space for the example app'
 ```
-Step 4: Seed the new space with the content model. Replace the `SPACE_ID` with the id returned from the create command executed in step 3
+Step 4: [Seed](https://github.com/contentful/contentful-cli/tree/master/docs/space/seed) the new space with the example content model [`the-example-app`](https://github.com/contentful/content-models/tree/master/the-example-app). Replace the `SPACE_ID` with the id returned from the create command executed in step 3
 ```
 contentful space seed -s '<SPACE_ID>' -t the-example-app
 ```

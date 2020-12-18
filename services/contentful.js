@@ -55,11 +55,13 @@ module.exports.getSpace = throwOnEmptyResult('Space', (api = 'cda') => {
 })
 
 /**
- * Get the Locales attached to this environment.
+
+ * Get the environment locales
  * @param api - string - the api to use, cda or cap. Default: 'cda'
  * @returns {undefined}
  */
-module.exports.getLocales = throwOnEmptyResult('Locales', (api = 'cda') => {
+module.exports.getLocales = throwOnEmptyResult('Environment', (api = 'cda') => {
+
   return getClient(api).getLocales()
     .then((response) => response.items)
 })

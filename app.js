@@ -16,7 +16,10 @@ const breadcrumb = require('./lib/breadcrumb')
 const { updateCookie } = require('./lib/cookies')
 const settings = require('./lib/settings')
 const routes = require('./routes/index')
+
 const { getLocales } = require('./services/contentful')
+const { getSpace, getLocales } = require('./services/contentful')
+
 const { catchErrors } = require('./handlers/errorHandlers')
 
 const SETTINGS_NAME = 'theExampleAppSettings'
@@ -96,6 +99,9 @@ app.use(catchErrors(async function (request, response, next) {
 app.use(catchErrors(async function (request, response, next) {
   // Catch misconfigured space credentials and display settings page
   try {
+
+    const locales = await getLocales()
+    const space = await getSpace()
     const locales = await getLocales()
 
     // Update credentials in cookie when space connection is successful
